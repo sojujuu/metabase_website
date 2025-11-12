@@ -119,14 +119,15 @@ html, body, #root {
 }
 
 /* ================================
-   EMBED: Metabase iframe wrapper
+    EMBED: Metabase iframe wrapper
    ================================ */
 .metabase-shell {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1440px;
   margin-inline: auto;
-  padding: clamp(8px, 2vw, 16px);
+  padding: 0;
   overflow: hidden;
+  background: hsl(var(--card));
 }
 
 /* Iframe utama */
@@ -151,25 +152,3 @@ html, body, #root {
 .card-no-pad .CardContent { padding: 0 !important; }
 .card-no-pad { overflow: hidden; }
 
-/* ================================
-    Full-bleed TANPA scroll kanan
-   ================================ */
-/* kompensasi lebar scrollbar */
-:root { --sbw: calc(100vw - 100%); }
-
-.metabase-shell-wide {
-  width: calc(100vw - var(--sbw));
-  margin-left: calc(50% - 50vw + var(--sbw) / 2);
-  margin-right: calc(50% - 50vw + var(--sbw) / 2);
-  overflow: hidden;
-  background: hsl(var(--card));
-}
-
-/* Browser modern: 100dvw tidak menghitung scrollbar */
-@supports (width: 100dvw) {
-  .metabase-shell-wide {
-    width: 100dvw;
-    margin-left: calc(50% - 50dvw);
-    margin-right: calc(50% - 50dvw);
-  }
-}

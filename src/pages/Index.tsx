@@ -91,7 +91,7 @@ const Index = () => {
         <div className="w-full">
           <Card className="shadow-lg card-no-pad">
             <CardContent className="p-0">
-              <div className="metabase-shell-wide">
+              <div className="metabase-shell">
                 <iframe
                   id="metabaseDash"
                   className="metabase-frame"
