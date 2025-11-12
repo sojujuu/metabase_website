@@ -118,3 +118,23 @@ All colors MUST be HSL.
     color: hsl(var(--foreground));
   }
 }
+
+/* Membuat section iframe melebar 100vw walau di dalam .container */
+.full-bleed { 
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* Pastikan halaman bisa mengambil tinggi penuh */
+html, body, #root { 
+  height: 100%; 
+  margin: 0; 
+}
+
+/* Mobile modern: gunakan 100dvh agar tidak kepotong address bar */
+@supports (height: 100dvh) {
+  .full-bleed iframe { 
+    height: calc(100dvh - 64px); 
+  }
+}

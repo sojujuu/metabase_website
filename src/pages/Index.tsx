@@ -87,18 +87,19 @@ const Index = () => {
               </p>
             </div>
 
-            <Card className="p-4 md:p-6 shadow-lg">
-              <div className="w-full overflow-hidden rounded-lg">
-                {/* TODO: Ganti URL ini dengan public link Metabase sebenarnya */}
-                <iframe
-                  src="https://ciliately-unreprimanded-christen.ngrok-free.dev/public/dashboard/daf3d283-eabc-48b6-9eaa-8d44d9de3843"
-                  className="w-full border-0 rounded-lg"
-                  style={{ height: '900px' }}
-                  title="Metabase Dashboard - AirWeather Jakarta"
-                  allowFullScreen
-                />
-              </div>
-            </Card>
+            <div className="full-bleed">
+              {/* TODO: Ganti URL ini dengan public link Metabase sebenarnya */}
+              <iframe
+                src="https://ciliately-unreprimanded-christen.ngrok-free.dev/public/dashboard/daf3d283-eabc-48b6-9eaa-8d44d9de3843"
+                className="w-screen border-0"
+                style={{ height: 'calc(100dvh - 64px)' }} // 64px = tinggi navbar (h-16)
+                title="Metabase Dashboard - AirWeather Jakarta"
+                allow="fullscreen"
+                allowFullScreen
+                referrerPolicy="no-referrer"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
