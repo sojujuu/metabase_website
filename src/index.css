@@ -2,10 +2,9 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
+/* ================================
+   Design Tokens (HSL)
+   ================================ */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -38,26 +37,19 @@ All colors MUST be HSL.
     --ring: 195 85% 45%;
 
     --radius: 0.75rem;
-    
+
     /* Custom design tokens */
     --hero-gradient-start: 195 85% 45%;
     --hero-gradient-end: 180 75% 50%;
     --section-bg: 200 15% 98%;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -89,10 +81,11 @@ All colors MUST be HSL.
     --border: 210 30% 20%;
     --input: 210 30% 20%;
     --ring: 195 85% 50%;
-    
+
     --hero-gradient-start: 195 85% 50%;
     --hero-gradient-end: 180 75% 55%;
     --section-bg: 210 35% 12%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -104,10 +97,11 @@ All colors MUST be HSL.
   }
 }
 
+/* ================================
+   Base resets + typography
+   ================================ */
 @layer base {
-  * {
-    border-color: hsl(var(--border));
-  }
+  * { border-color: hsl(var(--border)); }
 
   html {
     scroll-behavior: smooth;
@@ -119,27 +113,63 @@ All colors MUST be HSL.
   }
 }
 
-/* Membuat section iframe melebar 100vw walau di dalam .container */
+/* ================================
+   Layout safety: anti scroll horizontal
+   ================================ */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden; /* cegah scroll kanan global */
+}
+
+/* ================================
+   EMBED: Metabase iframe wrapper
+   ================================ */
+.metabase-shell {
+  width: 100%;
+  max-width: 1280px;                 /* kunci lebar nyaman */
+  margin-inline: auto;
+  padding: clamp(8px, 2vw, 16px);
+  overflow: hidden;                  /* cegah bleed ke kanan */
+}
+
+/* Iframe utama */
+.metabase-frame {
+  display: block;
+  width: 100%;
+  border: 0;
+  height: 100svh;                    /* isi tinggi viewport modern */
+  min-height: 1200px;                /* tambahkan ruang agar tak ada scroll di dalam iframe */
+  overflow: hidden;
+}
+
+/* Responsive: tambah tinggi untuk layar lebih kecil (konten Metabase cenderung lebih tinggi) */
+@media (max-width: 1200px) { .metabase-frame { min-height: 1350px; } }
+@media (max-width: 1024px) { .metabase-frame { min-height: 1500px; } }
+@media (max-width: 640px)  { .metabase-frame { min-height: 1700px; } }
+
+/* Jika pakai <Card> komponen: nolkan padding agar tidak ada white space */
+.card-no-pad,
+.card-no-pad .CardContent { padding: 0 !important; }
+.card-no-pad { overflow: hidden; }
+
+/* ================================
+   Matikan pola full-bleed 100vw (penyebab scroll kanan).
+   Jika kamu memang butuh full-bleed, ganti ke width:100% aman.
+   ================================ */
 .full-bleed { 
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  width: 100%;            /* <- bukan 100vw */
+  margin: 0;              /* hilangkan perhitungan negatif margin */
 }
 
-/* Pastikan halaman bisa mengambil tinggi penuh */
-html, body, #root { 
-  height: 100%; 
-  margin: 0; 
-}
-
-/* Mobile modern: gunakan 100dvh agar tidak kepotong address bar */
+/* Mobile modern optional: jika kamu tetap pakai .full-bleed iframe */
 @supports (height: 100dvh) {
-  .full-bleed iframe { 
+  .full-bleed iframe {
     height: calc(100dvh - 64px);
   }
 }
 
-/* Desktop: tinggi lebih nyaman 85dvh */
+/* Desktop optional: tinggi nyaman jika pakai .full-bleed */
 @media (min-width: 768px) {
   .full-bleed iframe {
     height: 85dvh;
