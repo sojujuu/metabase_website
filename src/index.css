@@ -124,6 +124,13 @@ All colors MUST be HSL.
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
+  overflow: hidden;
+  position: relative;
+}
+
+.full-bleed iframe {
+  display: block;
+  overflow: hidden;
 }
 
 /* Pastikan halaman bisa mengambil tinggi penuh */
