@@ -175,3 +175,10 @@ html, body, #root {
     height: 85dvh;
   }
 }
+
+.metabase-shell-wide {
+  width: 100vw;                     /* isi penuh layar */
+  margin-left: calc(50% - 50vw);    /* keluarkan dari container tengah */
+  margin-right: calc(50% - 50vw);
+  overflow: hidden;
+}

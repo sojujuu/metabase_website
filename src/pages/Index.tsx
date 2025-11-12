@@ -78,34 +78,32 @@ const Index = () => {
 
       {/* Dashboard Section */}
       <section id="dashboard" className="py-16 md:py-24 bg-section-bg">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Dashboard</h2>
-              <p className="text-muted-foreground max-w-3xl mx-auto">
-                Dashboard interaktif ini menampilkan visualisasi komprehensif yang mencakup persentase hari
-                sesuai standar WHO untuk berbagai polutan, distribusi kategori Indeks Kualitas Udara (AQI),
-                matriks korelasi antara parameter cuaca dan polutan, serta analisis korelasi stabil teratas.
-              </p>
-            </div>
+        <div className="text-center mb-12 px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Dashboard</h2>
+          <p className="text-muted-foreground max-w-3xl mx-auto">
+            Dashboard interaktif ini menampilkan visualisasi komprehensif yang mencakup persentase hari
+            sesuai standar WHO untuk berbagai polutan, distribusi kategori Indeks Kualitas Udara (AQI),
+            matriks korelasi antara parameter cuaca dan polutan, serta analisis korelasi stabil teratas.
+          </p>
+        </div>
 
-            {/* Card tanpa padding agar tidak ada white space tambahan */}
-            <Card className="shadow-lg card-no-pad">
-              <CardContent className="p-0">
-                <div className="metabase-shell">
-                  <iframe
-                    id="metabaseDash"
-                    className="metabase-frame"
-                    title="Metabase Dashboard - AirWeather Jakarta"
-                    src="https://ciliately-unreprimanded-christen.ngrok-free.dev/public/dashboard/daf3d283-eabc-48b6-9eaa-8d44d9de3843?bordered=false&titled=false"
-                    loading="lazy"
-                    allow="fullscreen"
-                    allowFullScreen
-                  />
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+        {/* Card lebar penuh */}
+        <div className="w-full">
+          <Card className="shadow-lg card-no-pad">
+            <CardContent className="p-0">
+              <div className="metabase-shell-wide">
+                <iframe
+                  id="metabaseDash"
+                  className="metabase-frame"
+                  title="Metabase Dashboard - AirWeather Jakarta"
+                  src="https://ciliately-unreprimanded-christen.ngrok-free.dev/public/dashboard/daf3d283-eabc-48b6-9eaa-8d44d9de3843?bordered=false&titled=false"
+                  loading="lazy"
+                  allow="fullscreen"
+                  allowFullScreen
+                />
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
