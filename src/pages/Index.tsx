@@ -96,7 +96,7 @@ const Index = () => {
                   id="metabaseDash"
                   className="metabase-frame"
                   title="Metabase Dashboard - AirWeather Jakarta"
-                  src="https://ciliately-unreprimanded-christen.ngrok-free.dev/public/dashboard/daf3d283-eabc-48b6-9eaa-8d44d9de3843?bordered=false&titled=false"
+                  src="https://ciliately-unreprimanded-christen.ngrok-free.dev/public/dashboard/cefd60e4-7272-42d0-a8d6-0dd9d7b9e24e?bordered=false&titled=false"
                   loading="lazy"
                   allow="fullscreen"
                   allowFullScreen
