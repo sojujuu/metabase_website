@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities";
 
 /* ================================
-   Design Tokens (HSL)
+    Design Tokens (HSL)
    ================================ */
 @layer base {
   :root {
@@ -38,7 +38,7 @@
 
     --radius: 0.75rem;
 
-    /* Custom design tokens */
+    /* Custom tokens */
     --hero-gradient-start: 195 85% 45%;
     --hero-gradient-end: 180 75% 50%;
     --section-bg: 200 15% 98%;
@@ -98,15 +98,11 @@
 }
 
 /* ================================
-   Base resets + typography
+    Base resets + typography
    ================================ */
 @layer base {
   * { border-color: hsl(var(--border)); }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
+  html { scroll-behavior: smooth; }
   body {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
@@ -114,7 +110,7 @@
 }
 
 /* ================================
-   Layout safety: anti scroll horizontal
+    Layout safety
    ================================ */
 html, body, #root {
   height: 100%;
@@ -127,10 +123,10 @@ html, body, #root {
    ================================ */
 .metabase-shell {
   width: 100%;
-  max-width: 1280px;                 /* kunci lebar nyaman */
+  max-width: 1280px;
   margin-inline: auto;
   padding: clamp(8px, 2vw, 16px);
-  overflow: hidden;                  /* cegah bleed ke kanan */
+  overflow: hidden;
 }
 
 /* Iframe utama */
@@ -139,24 +135,41 @@ html, body, #root {
   width: 100%;
   border: 0;
   background: hsl(var(--card));
-  height: auto;                    /* isi tinggi viewport modern */
-  min-height: 1200px;                /* tambahkan ruang agar tak ada scroll di dalam iframe */
+  height: auto;          /* jangan 100svh */
+  min-height: 1080px;    /* desktop lebar: cukup untuk konten + footer Metabase */
   overflow: hidden;
 }
 
-/* Responsive: tambah tinggi untuk layar lebih kecil (konten Metabase cenderung lebih tinggi) */
-@media (max-width: 1200px) { .metabase-frame { min-height: 1350px; } }
-@media (max-width: 1024px) { .metabase-frame { min-height: 1500px; } }
-@media (max-width: 640px)  { .metabase-frame { min-height: 1700px; } }
+/* Tinggi responsif (konten cenderung lebih tinggi saat layar menyempit) */
+@media (max-width: 1280px) { .metabase-frame { min-height: 1180px; } }
+@media (max-width: 1100px) { .metabase-frame { min-height: 1280px; } }
+@media (max-width: 1024px) { .metabase-frame { min-height: 1380px; } }
+@media (max-width: 640px)  { .metabase-frame { min-height: 1600px; } }
 
-/* Jika pakai <Card> komponen: nolkan padding agar tidak ada white space */
+/* Card tanpa padding untuk area embed */
 .card-no-pad,
 .card-no-pad .CardContent { padding: 0 !important; }
 .card-no-pad { overflow: hidden; }
 
+/* ================================
+    Full-bleed TANPA scroll kanan
+   ================================ */
+/* kompensasi lebar scrollbar */
+:root { --sbw: calc(100vw - 100%); }
+
 .metabase-shell-wide {
-  width: 100vw;                     /* isi penuh layar */
-  margin-left: calc(50% - 50vw);    /* keluarkan dari container tengah */
-  margin-right: calc(50% - 50vw);
+  width: calc(100vw - var(--sbw));
+  margin-left: calc(50% - 50vw + var(--sbw) / 2);
+  margin-right: calc(50% - 50vw + var(--sbw) / 2);
   overflow: hidden;
+  background: hsl(var(--card));
+}
+
+/* Browser modern: 100dvw tidak menghitung scrollbar */
+@supports (width: 100dvw) {
+  .metabase-shell-wide {
+    width: 100dvw;
+    margin-left: calc(50% - 50dvw);
+    margin-right: calc(50% - 50dvw);
+  }
 }
