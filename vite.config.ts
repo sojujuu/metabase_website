@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: "/metabase_website/",
   server: {
     host: "::",
     port: 8080,
@@ -16,3 +17,4 @@ export default defineConfig(({ mode }) => ({
     },
   },
 }));
+// https://sojujuu.github.io/metabase_website/

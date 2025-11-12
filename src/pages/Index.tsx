@@ -91,22 +91,12 @@ const Index = () => {
               <div className="w-full overflow-hidden rounded-lg">
                 {/* TODO: Ganti URL ini dengan public link Metabase sebenarnya */}
                 <iframe
-                  src="https://METABASE_PUBLIC_LINK_HERE"
+                  src="https://ciliately-unreprimanded-christen.ngrok-free.dev/public/dashboard/daf3d283-eabc-48b6-9eaa-8d44d9de3843"
                   className="w-full border-0 rounded-lg"
                   style={{ height: '900px' }}
                   title="Metabase Dashboard - AirWeather Jakarta"
                   allowFullScreen
                 />
-                {/* Placeholder content when Metabase link not yet configured */}
-                <div className="flex items-center justify-center bg-secondary/50 rounded-lg" style={{ minHeight: '900px' }}>
-                  <div className="text-center p-8 space-y-4">
-                    <Cloud className="h-16 w-16 text-muted-foreground mx-auto" />
-                    <h3 className="text-xl font-semibold text-foreground">Dashboard Metabase</h3>
-                    <p className="text-muted-foreground max-w-md">
-                      Ganti URL iframe di atas dengan link public dashboard Metabase Anda untuk menampilkan visualisasi data.
-                    </p>
-                  </div>
-                </div>
               </div>
             </Card>
           </div>
