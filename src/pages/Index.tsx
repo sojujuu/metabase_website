@@ -88,11 +88,9 @@ const Index = () => {
             </div>
 
             <div className="full-bleed">
-              {/* TODO: Ganti URL ini dengan public link Metabase sebenarnya */}
               <iframe
                 src="https://ciliately-unreprimanded-christen.ngrok-free.dev/public/dashboard/daf3d283-eabc-48b6-9eaa-8d44d9de3843"
-                className="w-screen border-0"
-                style={{ height: 'calc(100dvh - 64px)' }} // 64px = tinggi navbar (h-16)
+                className="w-screen border-0 h-[calc(100dvh-64px)] md:h-[85dvh]"
                 title="Metabase Dashboard - AirWeather Jakarta"
                 allow="fullscreen"
                 allowFullScreen
