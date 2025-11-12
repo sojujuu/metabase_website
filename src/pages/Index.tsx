@@ -91,7 +91,7 @@ const Index = () => {
               <div className="w-full overflow-hidden rounded-lg">
                 {/* TODO: Ganti URL ini dengan public link Metabase sebenarnya */}
                 <iframe
-                  src="https://ciliately-unreprimanded-christen.ngrok-free.dev/public/dashboard/daf3d283-eabc-48b6-9eaa-8d44d9de3843"
+                  src="https://ciliately-unreprimanded-christen.ngrok-free.dev/public/dashboard/cefd60e4-7272-42d0-a8d6-0dd9d7b9e24e"
                   className="w-full border-0 rounded-lg"
                   style={{ height: '900px' }}
                   title="Metabase Dashboard - AirWeather Jakarta"
