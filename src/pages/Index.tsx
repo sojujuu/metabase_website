@@ -87,9 +87,8 @@ const Index = () => {
           </p>
         </div>
 
-        {/* Card lebar penuh */}
         <div className="w-full">
-          <Card className="shadow-lg card-no-pad">
+          <Card className="shadow-lg card-no-pad rounded-none">
             <CardContent className="p-0">
               <div className="metabase-shell">
                 <iframe
