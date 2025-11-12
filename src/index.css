@@ -135,6 +135,13 @@ html, body, #root {
 /* Mobile modern: gunakan 100dvh agar tidak kepotong address bar */
 @supports (height: 100dvh) {
   .full-bleed iframe { 
-    height: calc(100dvh - 64px); 
+    height: calc(100dvh - 64px);
+  }
+}
+
+/* Desktop: tinggi lebih nyaman 85dvh */
+@media (min-width: 768px) {
+  .full-bleed iframe {
+    height: 85dvh;
   }
 }

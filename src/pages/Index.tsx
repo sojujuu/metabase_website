@@ -90,7 +90,10 @@ const Index = () => {
             <div className="full-bleed">
               <iframe
                 src="https://ciliately-unreprimanded-christen.ngrok-free.dev/public/dashboard/daf3d283-eabc-48b6-9eaa-8d44d9de3843"
-                className="w-screen border-0 h-[calc(100dvh-64px)] md:h-[85dvh]"
+                className="w-screen border-0"
+                style={{ 
+                  height: 'calc(100dvh - 64px)'
+                }}
                 title="Metabase Dashboard - AirWeather Jakarta"
                 allow="fullscreen"
                 allowFullScreen
