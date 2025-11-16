@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Cloud, Wind, Droplets } from "lucide-react";
 
 const Index = () => {
@@ -54,20 +54,18 @@ const Index = () => {
               <Cloud className="h-8 w-8 md:h-12 md:w-12 text-primary" />
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-foreground">
-              Dashboard Monitoring Cuaca Harian dan Kualitas Udara di Kota Jakarta{" "}
+              Dashboard Monitoring Cuaca Harian dan Kualitas Udara di Kota Jakarta 
               <span className="text-primary"> menggunakan Pearson Correlation</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Platform interaktif untuk memantau kondisi cuaca harian, tingkat kualitas udara,
+              Platform interaktif untuk memantau kondisi cuaca harian, tingkat kualitas udara, 
               dan menganalisis korelasi antara parameter cuaca dengan polutan udara di Jakarta.
             </p>
             <div className="pt-4">
               <Button
                 size="lg"
                 className="text-base px-8"
-                onClick={() =>
-                  document.getElementById("dashboard")?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => document.getElementById('dashboard')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Lihat Dashboard
               </Button>
@@ -78,31 +76,30 @@ const Index = () => {
 
       {/* Dashboard Section */}
       <section id="dashboard" className="py-16 md:py-24 bg-section-bg">
-        <div className="text-center mb-12 px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Dashboard</h2>
-          <p className="text-muted-foreground max-w-3xl mx-auto">
-            Dashboard interaktif ini menampilkan visualisasi komprehensif yang mencakup persentase hari
-            sesuai standar WHO untuk berbagai polutan, distribusi kategori Indeks Kualitas Udara (AQI),
-            matriks korelasi antara parameter cuaca dan polutan, serta analisis korelasi stabil teratas.
-          </p>
-        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Dashboard</h2>
+              <p className="text-muted-foreground max-w-3xl mx-auto">
+                Dashboard interaktif ini menampilkan visualisasi komprehensif yang mencakup persentase hari 
+                sesuai standar WHO untuk berbagai polutan, distribusi kategori Indeks Kualitas Udara (AQI), 
+                matriks korelasi antara parameter cuaca dan polutan, serta analisis korelasi stabil teratas.
+              </p>
+            </div>
 
-        <div className="w-full">
-          <Card className="shadow-lg card-no-pad rounded-none">
-            <CardContent className="p-0">
-              <div className="metabase-shell">
+            <Card className="p-4 md:p-6 shadow-lg">
+              <div className="w-full overflow-hidden rounded-lg">
+                {/* TODO: Ganti URL ini dengan public link Metabase sebenarnya */}
                 <iframe
-                  id="metabaseDash"
-                  className="metabase-frame"
-                  title="Metabase Dashboard - AirWeather Jakarta"
                   src="https://ciliately-unreprimanded-christen.ngrok-free.dev/public/dashboard/cefd60e4-7272-42d0-a8d6-0dd9d7b9e24e?bordered=false&titled=false"
-                  loading="lazy"
-                  allow="fullscreen"
+                  className="w-full border-0 rounded-lg"
+                  style={{ height: '900px' }}
+                  title="Metabase Dashboard - AirWeather Jakarta"
                   allowFullScreen
                 />
               </div>
-            </CardContent>
-          </Card>
+            </Card>
+          </div>
         </div>
       </section>
 
@@ -111,20 +108,20 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Tentang Penelitian</h2>
-
+            
             <div className="space-y-8">
               <Card className="p-6 md:p-8">
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Penelitian ini menganalisis hubungan antara berbagai variabel cuaca—seperti suhu udara,
-                  kelembapan relatif, curah hujan, durasi penyinaran matahari, kecepatan angin, dan tekanan
-                  udara—dengan konsentrasi polutan udara harian di Kota Jakarta. Menggunakan metode korelasi
-                  Pearson, analisis ini bertujuan mengidentifikasi pola dan kekuatan hubungan antara kondisi
-                  meteorologi dan tingkat polusi udara, memberikan wawasan penting untuk pemahaman kualitas
+                  Penelitian ini menganalisis hubungan antara berbagai variabel cuaca—seperti suhu udara, 
+                  kelembapan relatif, curah hujan, durasi penyinaran matahari, kecepatan angin, dan tekanan 
+                  udara—dengan konsentrasi polutan udara harian di Kota Jakarta. Menggunakan metode korelasi 
+                  Pearson, analisis ini bertujuan mengidentifikasi pola dan kekuatan hubungan antara kondisi 
+                  meteorologi dan tingkat polusi udara, memberikan wawasan penting untuk pemahaman kualitas 
                   udara urban dan implikasinya terhadap kesehatan masyarakat.
                 </p>
 
                 <div className="border-t pt-6 space-y-3">
-                  {/* EDIT SECTION */}
+                  {/* EDIT SECTION: Ganti placeholder di bawah ini dengan informasi sebenarnya */}
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <p className="font-semibold text-foreground mb-1">Peneliti</p>
