@@ -91,7 +91,7 @@
                 <div className="w-full overflow-hidden rounded-lg">
                     <iframe
                     src="https://ciliately-unreprimanded-christen.ngrok-free.dev/public/dashboard/cefd60e4-7272-42d0-a8d6-0dd9d7b9e24e?bordered=false&titled=false"
-                    className="w-full min-h-[1580px] border-0 rounded-lg"
+                    className="w-full min-h-[1450px] border-0 rounded-lg"
                     title="Metabase Dashboard - AirWeather Jakarta"
                     allowFullScreen
                     />
