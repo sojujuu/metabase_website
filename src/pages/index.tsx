@@ -3,7 +3,7 @@
     import { Cloud, Wind, Droplets } from "lucide-react";
     import { Link } from "react-router-dom";
     // import { useEffect } from "react";
-
+    const dashboardPreviewSrc = `${import.meta.env.BASE_URL}dashboard-preview.png`;
     const Index = () => {
         // setiap kali masuk ke beranda, paksa scroll ke paling atas
         // useEffect(() => {
@@ -107,7 +107,7 @@
                     <Card className="w-full p-2 md:p-4 shadow-lg hover:shadow-xl transition-shadow">
                     <div className="w-full overflow-hidden rounded-lg border bg-background">
                         <img
-                        src="/dashboard-preview.png"
+                        src={dashboardPreviewSrc}
                         alt="Preview Dashboard Monitoring Cuaca Harian dan Kualitas Udara di Kota Jakarta menggunakan Pearson Correlation"
                         className="w-full h-auto block"
                         />
