@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Cloud, Wind, Droplets } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const dashboardPreviewSrc = `${import.meta.env.BASE_URL}dashboard-preview.png`;
+const dashboardPreviewSrc = `${import.meta.env.BASE_URL}dashboard-preview.png?v=2`;
 
 type GoogleUser = {
     name?: string;
