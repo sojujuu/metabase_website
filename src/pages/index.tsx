@@ -58,7 +58,7 @@ const Index = () => {
                     href="#dashboard"
                     className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
                     >
-                    Dashboard
+                    Preview Dashboard
                     </a>
                     <a
                     href="#tentang"
@@ -93,7 +93,7 @@ const Index = () => {
                     Beranda
                 </a>
                 <a href="#dashboard" className="text-primary font-medium">
-                    Dashboard
+                    Preview Dashboard
                 </a>
                 <a href="#tentang" className="text-muted-foreground">
                     Tentang
@@ -141,12 +141,12 @@ const Index = () => {
             <div className="w-full px-4 sm:px-6 lg:px-8">
             <div className="w-full flex flex-col items-center">
                 <div className="text-center mb-12 max-w-3xl">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Dashboard</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Preview Dashboard</h2>
 
                 <p className="text-muted-foreground">
                     Dashboard interaktif ini menampilkan visualisasi komprehensif yang mencakup persentase hari
-                    sesuai standar WHO, distribusi kategori AQI, matriks korelasi cuaca dan polutan, dan analisis
-                    korelasi stabil.
+                    sesuai standar WHO, distribusi kategori AQI, tren bulanan polutan per tahun,
+                    matriks korelasi cuaca dan polutan, serta analisis kestabilan korelasi.
                 </p>
 
                 <p className="mt-3 text-sm text-muted-foreground">
@@ -180,12 +180,42 @@ const Index = () => {
                 <div className="space-y-8">
                 <Card className="p-6 md:p-8">
                     <p className="text-muted-foreground leading-relaxed mb-6 text-justify">
-                    Penelitian ini menganalisis hubungan parameter cuaca seperti suhu, kelembapan,
-                    curah hujan, penyinaran matahari, dan angin terhadap polutan udara di Jakarta
-                    menggunakan Pearson Correlation. Dashboard dibangun dengan Metabase dan
-                    dipublikasikan melalui GitHub Pages.
+                    Penelitian ini merancang dan mengimplementasikan dasbor analitik publik untuk
+                    memantau cuaca harian dan kualitas udara di Kota Jakarta dengan mengintegrasikan
+                    data cuaca BMKG dan data Indeks Standar Pencemar Udara (ISPU) Satu Data Jakarta
+                    periode 2014–2024. Hubungan antara variabel meteorologi (suhu, kelembapan,
+                    curah hujan, penyinaran matahari, dan angin) dengan polutan udara (PM₁₀, SO₂,
+                    NO₂, CO, dan O₃) dianalisis menggunakan korelasi Pearson sebagai metode utama
+                    dan korelasi peringkat Spearman sebagai metode pendukung untuk memvalidasi arah
+                    hubungan yang dihasilkan.
                     </p>
 
+                    {/* Hasil utama singkat */}
+                    <p className="text-muted-foreground leading-relaxed text-justify">
+                    Hasil analisis yang ditampilkan pada dasbor menunjukkan bahwa tingkat
+                    kepatuhan terhadap ambang batas WHO 2021 berbeda cukup jauh antar polutan:
+                    CO memiliki persentase hari sesuai standar tertinggi, sekitar 93,53%, sedangkan
+                    PM₁₀ hanya sekitar 21,35%. Temuan ini mengindikasikan bahwa partikulat kasar
+                    (PM₁₀) masih menjadi faktor dominan yang menurunkan kualitas udara di Jakarta.
+                    Pola tren bulanan juga memperlihatkan bahwa PM₁₀ dan O₃ cenderung meningkat
+                    pada periode pertengahan tahun yang lebih kering (sekitar Maret–Juni), sementara
+                    CO, NO₂, dan SO₂ relatif lebih stabil sepanjang tahun.
+                    </p>
+
+                    {/* Insight korelasi + kesimpulan sistem */}
+                    <p className="text-muted-foreground leading-relaxed text-justify">
+                    Matriks korelasi Pearson dan Spearman pada dasbor memperlihatkan contoh pola
+                    hubungan seperti suhu rata-rata yang berkorelasi positif dengan ozon (O₃) dan
+                    curah hujan yang berkorelasi negatif dengan PM₁₀, sedangkan kelembapan rata-rata
+                    dan arah angin maksimum muncul berulang kali sebagai pasangan korelasi yang
+                    stabil terhadap O₃ dan PM₁₀. Secara keseluruhan, penelitian ini menyimpulkan
+                    bahwa dasbor yang dibangun mampu menyajikan gambaran komprehensif hubungan
+                    cuaca–polusi udara di Jakarta dalam bentuk visual yang mudah dibaca, telah
+                    teruji melalui pengujian blackbox dan User Acceptance Test (UAT), serta berhasil
+                    diintegrasikan ke situs web publik menggunakan Metabase dan GitHub Pages dengan
+                    autentikasi Google sebagai lapisan akses awal.
+                    </p>
+                    
                     <div className="border-t pt-6 space-y-3">
                     <div className="grid md:grid-cols-2 gap-4">
                         <div>

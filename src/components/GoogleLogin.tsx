@@ -55,10 +55,9 @@ export function GoogleLogin({ onLogin }: Props) {
             <div className="flex flex-col items-center space-y-4">
             <div ref={buttonRef} />
 
-            {/* <p className="text-xs text-muted-foreground text-center">
-                Data yang dipakai hanya nama, email, dan foto profil Google
-                untuk autentikasi.
-            </p> */}
+            <p className="text-xs text-muted-foreground text-center">
+
+            </p>
             </div>
         </Card>
         </div>
