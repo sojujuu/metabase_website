@@ -201,7 +201,7 @@ const Index = () => {
                     pada periode pertengahan tahun yang lebih kering (sekitar Maret–Juni), sementara
                     CO, NO₂, dan SO₂ relatif lebih stabil sepanjang tahun.
                     </p>
-
+                    <br></br>
                     {/* Insight korelasi + kesimpulan sistem */}
                     <p className="text-muted-foreground leading-relaxed text-justify">
                     Matriks korelasi Pearson dan Spearman pada dasbor memperlihatkan contoh pola
