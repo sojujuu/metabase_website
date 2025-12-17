@@ -215,7 +215,7 @@ const Index = () => {
                     diintegrasikan ke situs web publik menggunakan Metabase dan GitHub Pages dengan
                     autentikasi Google sebagai lapisan akses awal.
                     </p>
-                    
+                    <br></br>
                     <div className="border-t pt-6 space-y-3">
                     <div className="grid md:grid-cols-2 gap-4">
                         <div>
